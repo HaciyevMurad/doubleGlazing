@@ -15,7 +15,6 @@ const modals = () => {
 
                             windows.forEach(item=>{
                                 item.style.display = "none";
-                                console.log(item)
                             });
 
                             modal.style.display = "block";
@@ -30,7 +29,6 @@ const modals = () => {
 
                 windows.forEach(item=>{
                     item.style.display = "none";
-                    console.log(item)
                 });
         });
         
@@ -38,7 +36,6 @@ const modals = () => {
                 if(e.target===modal && closeOverlayClick){
                     windows.forEach(item=>{
                         item.style.display = "none";
-                        console.log(item)
                     });
 
                     modal.style.display = "none";
