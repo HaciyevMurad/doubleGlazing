@@ -1,7 +1,10 @@
+import changeNnumber from './chhangeNumber';
+
 
 const forms = () =>{
     const form = document.querySelectorAll('form'),
-          input = document.querySelectorAll('input');
+          input = document.querySelectorAll('input'),
+          phoneInputs = document.querySelectorAll('input[name="user_phone"]')
 
 
           const message = {
@@ -18,9 +21,19 @@ const forms = () =>{
             return await res.text();
           }
 
+          changeNnumber(phoneInputs)
+
+        //   phoneInputs.forEach(item =>{
+        //       item.addEventListener('input', ()=>{
+
+        //           item.value = item.value.replace(/\D/, "")
+        //       })
+        //   })
+        
+
           const clearInput = () =>{
             input.forEach(item =>{
-                item.value = item.value.replace(/\D/, "");
+                item.value = ""
             })
         }
 
