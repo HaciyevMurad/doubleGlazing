@@ -14887,8 +14887,7 @@ var modals = function modals() {
     setTimeout(function () {
       document.querySelector(selector).style.display = "block";
     }, 60000);
-  } // showModalByTime(".popup");
-
+  }
 
   bindModal(".popup_engineer_btn", ".popup_engineer", ".popup_engineer .popup_close");
   bindModal(".phone_link", ".popup", ".popup .popup_close");
