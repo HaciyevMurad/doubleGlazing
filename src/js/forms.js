@@ -1,11 +1,11 @@
-import changeNnumber from './chhangeNumber';
+import checkNumInputs from './checkNumInputs';
 
 
-const forms = () =>{
+const forms = (state) =>{
     const form = document.querySelectorAll('form'),
           input = document.querySelectorAll('input'),
-          phoneInputs = document.querySelectorAll('input[name="user_phone"]')
-
+          phoneInputs = document.querySelectorAll('input[name="user_phone"]'),
+          window = document.querySelectorAll('[data-modal]');
 
           const message = {
               loaded : 'Загрузка',
@@ -21,21 +21,20 @@ const forms = () =>{
             return await res.text();
           }
 
-          changeNnumber(phoneInputs)
-
-        //   phoneInputs.forEach(item =>{
-        //       item.addEventListener('input', ()=>{
-
-        //           item.value = item.value.replace(/\D/, "")
-        //       })
-        //   })
-        
+          checkNumInputs(phoneInputs);
 
           const clearInput = () =>{
             input.forEach(item =>{
-                item.value = ""
-            })
-        }
+                item.value = "" ;
+                })
+            }
+
+            const closeAfterSubmit = ()=>{
+                window.forEach(item =>{
+                    item.style.display = "none";
+                    document.body.style.overflow = "";
+                })
+            }
 
           form.forEach(item =>{
               item.addEventListener('submit', (e)=>{
@@ -45,7 +44,14 @@ const forms = () =>{
                           statusMessage.classList.add('status');
                           item.appendChild(statusMessage);
                     
-                    const formData = new FormData(item)
+                    const formData = new FormData(item);
+
+                    if(item.getAttribute('data-calc') === "end"){
+                        for(let key in state){
+                            formData.append(key , state[key]);
+                        }
+                    }
+
                     document.querySelector('.status').textContent = message.loaded;
 
                     postData('assets/server.php' , formData)
@@ -57,7 +63,9 @@ const forms = () =>{
                         .finally(() => {
                             clearInput();
                             setTimeout(() =>{
-                                statusMessage.remove()
+                                statusMessage.remove();
+                                closeAfterSubmit();
+                               
                             },5000)
                         })
                    

@@ -34,7 +34,7 @@ const tabs = (headerSelector, tabSelector, contentSelector, activeClassSelector,
                         if(target == item || target.parentNode == item){
                             hideContent();
                             showContent(i)
-                            console.log(target);
+                     
                         }
                     })
             }
