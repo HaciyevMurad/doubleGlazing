@@ -18030,7 +18030,10 @@ window.addEventListener('DOMContentLoaded', function () {
   Object(_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.decoration_slider', '.no_click', '.decoration_content > div > div', 'after_click');
   Object(_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.decoration_slider', '.no_click', '.decoration_content > div > div', 'after_click');
   Object(_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.balcon_icons', '.balcon_icons_img', '.big_img  > img', 'do_image_more', 'inline');
+<<<<<<< HEAD
   Object(_forms__WEBPACK_IMPORTED_MODULE_3__["default"])(modalState);
+=======
+>>>>>>> main
 });
 
 /***/ }),
@@ -18063,6 +18066,10 @@ var modals = function modals() {
 
         windows.forEach(function (item) {
           item.style.display = "none";
+<<<<<<< HEAD
+=======
+          console.log(item);
+>>>>>>> main
         });
         modal.style.display = "block";
         document.body.style.overflow = "hidden";
@@ -18073,12 +18080,20 @@ var modals = function modals() {
       document.body.style.overflow = "";
       windows.forEach(function (item) {
         item.style.display = "none";
+<<<<<<< HEAD
+=======
+        console.log(item);
+>>>>>>> main
       });
     });
     modal.addEventListener("click", function (e) {
       if (e.target === modal && closeOverlayClick) {
         windows.forEach(function (item) {
           item.style.display = "none";
+<<<<<<< HEAD
+=======
+          console.log(item);
+>>>>>>> main
         });
         modal.style.display = "none";
         document.body.style.overflow = "";
