@@ -4,13 +4,15 @@ import modals from "./modals";
 import tabs from "./tabs";
 import forms from "./forms";
 import changeModalState from "./changeModalState"
+import timer from "./timer";
 
 window.addEventListener('DOMContentLoaded' , ()=>{
 
-    let modalState = {}
+    let modalState = {};
+    let deadline = 'dec 31, 2020';
 
 
-
+    timer('.container1', deadline);
     changeModalState(modalState);
     modals();
     tabs('.glazing_slider' , '.glazing_block' , '.glazing_content' , 'active');

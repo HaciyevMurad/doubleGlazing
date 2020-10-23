@@ -41,8 +41,6 @@ const modals = () => {
 
                     modal.style.display = "none";
                     document.body.style.overflow = "";
-
-                    
                 }
 
                 
