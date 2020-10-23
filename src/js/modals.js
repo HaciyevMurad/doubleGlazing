@@ -1,3 +1,4 @@
+
 const modals = () => {
     function bindModal(triggerSelector, modalSelector, closeSelector , closeOverlayClick = true){
             const trigger = document.querySelectorAll(triggerSelector);

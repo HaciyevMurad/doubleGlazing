@@ -1,4 +1,7 @@
+<<<<<<< HEAD
+=======
 
+>>>>>>> main
 const tabs = (headerSelector, tabSelector, contentSelector, activeClassSelector, display = 'block') =>{
     const header = document.querySelector(headerSelector),
           tab = document.querySelectorAll(tabSelector),
@@ -35,7 +38,7 @@ const tabs = (headerSelector, tabSelector, contentSelector, activeClassSelector,
                         if(target == item || target.parentNode == item){
                             hideContent();
                             showContent(i)
-                            console.log(target);
+                     
                         }
                     })
             }
