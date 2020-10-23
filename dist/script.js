@@ -18025,23 +18025,12 @@ window.addEventListener('DOMContentLoaded', function () {
   var deadline = 'dec 31, 2020';
   Object(_timer__WEBPACK_IMPORTED_MODULE_5__["default"])('.container1', deadline);
   Object(_changeModalState__WEBPACK_IMPORTED_MODULE_4__["default"])(modalState);
-  Object(_modals__WEBPACK_IMPORTED_MODULE_1__["default"])();
   Object(_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.glazing_slider', '.glazing_block', '.glazing_content', 'active');
   Object(_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.decoration_slider', '.no_click', '.decoration_content > div > div', 'after_click');
-<<<<<<< HEAD
   Object(_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.decoration_slider', '.no_click', '.decoration_content > div > div', 'after_click');
   Object(_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.balcon_icons', '.balcon_icons_img', '.big_img  > img', 'do_image_more', 'inline');
-<<<<<<< HEAD
-  Object(_forms__WEBPACK_IMPORTED_MODULE_3__["default"])(modalState);
-=======
-=======
-<<<<<<< HEAD
+  Object(_modals__WEBPACK_IMPORTED_MODULE_1__["default"])();
   Object(_forms__WEBPACK_IMPORTED_MODULE_3__["default"])();
-=======
-  Object(_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.decoration_slider', '.no_click', '.decoration_content > div > div', 'after_click');
-  Object(_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.balcon_icons', '.balcon_icons_img', '.big_img  > img', 'do_image_more', 'inline');
->>>>>>> main
->>>>>>> main
 });
 
 /***/ }),
@@ -18074,10 +18063,7 @@ var modals = function modals() {
 
         windows.forEach(function (item) {
           item.style.display = "none";
-<<<<<<< HEAD
-=======
           console.log(item);
->>>>>>> main
         });
         modal.style.display = "block";
         document.body.style.overflow = "hidden";
@@ -18088,20 +18074,14 @@ var modals = function modals() {
       document.body.style.overflow = "";
       windows.forEach(function (item) {
         item.style.display = "none";
-<<<<<<< HEAD
-=======
         console.log(item);
->>>>>>> main
       });
     });
     modal.addEventListener("click", function (e) {
       if (e.target === modal && closeOverlayClick) {
         windows.forEach(function (item) {
           item.style.display = "none";
-<<<<<<< HEAD
-=======
           console.log(item);
->>>>>>> main
         });
         modal.style.display = "none";
         document.body.style.overflow = "";
@@ -18117,10 +18097,10 @@ var modals = function modals() {
 
   bindModal(".popup_engineer_btn", ".popup_engineer", ".popup_engineer .popup_close");
   bindModal(".phone_link", ".popup", ".popup .popup_close");
-  bindModal(".phone_link", ".popup", ".popup .popup_close");
   bindModal(".glazing_price_btn", ".popup_calc", ".popup_calc_close");
   bindModal(".popup_calc_button", ".popup_calc_profile", ".popup_calc_profile_close", false);
   bindModal(".popup_calc_profile_button", ".popup_calc_end", ".popup_calc_end_close", false);
+  bindModal(".popup_calc_btn", ".popup_calc", ".popup_calc_close");
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (modals);
