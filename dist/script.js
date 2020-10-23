@@ -18028,11 +18028,19 @@ window.addEventListener('DOMContentLoaded', function () {
   Object(_modals__WEBPACK_IMPORTED_MODULE_1__["default"])();
   Object(_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.glazing_slider', '.glazing_block', '.glazing_content', 'active');
   Object(_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.decoration_slider', '.no_click', '.decoration_content > div > div', 'after_click');
+<<<<<<< HEAD
   Object(_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.decoration_slider', '.no_click', '.decoration_content > div > div', 'after_click');
   Object(_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.balcon_icons', '.balcon_icons_img', '.big_img  > img', 'do_image_more', 'inline');
 <<<<<<< HEAD
   Object(_forms__WEBPACK_IMPORTED_MODULE_3__["default"])(modalState);
 =======
+=======
+<<<<<<< HEAD
+  Object(_forms__WEBPACK_IMPORTED_MODULE_3__["default"])();
+=======
+  Object(_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.decoration_slider', '.no_click', '.decoration_content > div > div', 'after_click');
+  Object(_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.balcon_icons', '.balcon_icons_img', '.big_img  > img', 'do_image_more', 'inline');
+>>>>>>> main
 >>>>>>> main
 });
 
