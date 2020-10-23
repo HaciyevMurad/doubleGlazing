@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
 const tabs = (headerSelector, tabSelector, contentSelector, activeClassSelector, display = 'block') =>{
     const header = document.querySelector(headerSelector),
           tab = document.querySelectorAll(tabSelector),

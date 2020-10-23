@@ -17903,7 +17903,12 @@ window.addEventListener('DOMContentLoaded', function () {
   Object(_modals__WEBPACK_IMPORTED_MODULE_1__["default"])();
   Object(_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.glazing_slider', '.glazing_block', '.glazing_content', 'active');
   Object(_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.decoration_slider', '.no_click', '.decoration_content > div > div', 'after_click');
+<<<<<<< HEAD
   Object(_forms__WEBPACK_IMPORTED_MODULE_3__["default"])();
+=======
+  Object(_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.decoration_slider', '.no_click', '.decoration_content > div > div', 'after_click');
+  Object(_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.balcon_icons', '.balcon_icons_img', '.big_img  > img', 'do_image_more', 'inline');
+>>>>>>> main
 });
 
 /***/ }),
@@ -17923,15 +17928,21 @@ __webpack_require__.r(__webpack_exports__);
 
 var modals = function modals() {
   function bindModal(triggerSelector, modalSelector, closeSelector) {
+    var closeOverlayClick = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
     var trigger = document.querySelectorAll(triggerSelector);
     var modal = document.querySelector(modalSelector);
     var close = document.querySelector(closeSelector);
+    var windows = document.querySelectorAll('[data-modal]');
     trigger.forEach(function (item) {
       item.addEventListener('click', function (e) {
         if (e.target) {
           e.preventDefault();
         }
 
+        windows.forEach(function (item) {
+          item.style.display = "none";
+          console.log(item);
+        });
         modal.style.display = "block";
         document.body.style.overflow = "hidden";
       });
@@ -17939,9 +17950,17 @@ var modals = function modals() {
     close.addEventListener('click', function (e) {
       modal.style.display = "none";
       document.body.style.overflow = "";
+      windows.forEach(function (item) {
+        item.style.display = "none";
+        console.log(item);
+      });
     });
     modal.addEventListener("click", function (e) {
-      if (e.target === modal) {
+      if (e.target === modal && closeOverlayClick) {
+        windows.forEach(function (item) {
+          item.style.display = "none";
+          console.log(item);
+        });
         modal.style.display = "none";
         document.body.style.overflow = "";
       }
@@ -17957,6 +17976,9 @@ var modals = function modals() {
   bindModal(".popup_engineer_btn", ".popup_engineer", ".popup_engineer .popup_close");
   bindModal(".phone_link", ".popup", ".popup .popup_close");
   bindModal(".phone_link", ".popup", ".popup .popup_close");
+  bindModal(".glazing_price_btn", ".popup_calc", ".popup_calc_close");
+  bindModal(".popup_calc_button", ".popup_calc_profile", ".popup_calc_profile_close", false);
+  bindModal(".popup_calc_profile_button", ".popup_calc_end", ".popup_calc_end_close", false);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (modals);
@@ -18068,6 +18090,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var tabs = function tabs(headerSelector, tabSelector, contentSelector, activeClassSelector) {
+  var display = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 'block';
   var header = document.querySelector(headerSelector),
       tab = document.querySelectorAll(tabSelector),
       content = document.querySelectorAll(contentSelector),
@@ -18075,7 +18098,7 @@ var tabs = function tabs(headerSelector, tabSelector, contentSelector, activeCla
 
   function showContent() {
     var i = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-    content[i].style.display = 'block';
+    content[i].style.display = display;
     tab[i].classList.add(activeClassSelector);
   }
 
