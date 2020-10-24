@@ -18055,6 +18055,7 @@ var modals = function modals() {
     var modal = document.querySelector(modalSelector);
     var close = document.querySelector(closeSelector);
     var windows = document.querySelectorAll('[data-modal]');
+    var scroll = calcScroll();
     trigger.forEach(function (item) {
       item.addEventListener('click', function (e) {
         if (e.target) {
@@ -18063,38 +18064,52 @@ var modals = function modals() {
 
         windows.forEach(function (item) {
           item.style.display = "none";
-          console.log(item);
         });
         modal.style.display = "block";
         document.body.style.overflow = "hidden";
+        document.body.style.marginRight = "".concat(scroll, "px");
       });
     });
     close.addEventListener('click', function (e) {
       modal.style.display = "none";
       document.body.style.overflow = "";
+      document.body.style.marginRight = "".concat(0, "px");
       windows.forEach(function (item) {
         item.style.display = "none";
-        console.log(item);
       });
     });
     modal.addEventListener("click", function (e) {
       if (e.target === modal && closeOverlayClick) {
         windows.forEach(function (item) {
           item.style.display = "none";
-          console.log(item);
         });
         modal.style.display = "none";
         document.body.style.overflow = "";
+        document.body.style.marginRight = "".concat(0, "px");
       }
     });
+  }
+
+  function calcScroll() {
+    var div = document.createElement('div');
+    div.style.width = '50px';
+    div.style.height = '50px';
+    div.style.overflow = 'scroll';
+    div.style.visibility = 'visible';
+    div.style.backgroundColor = 'red';
+    document.body.appendChild(div);
+    var scrollWidth = div.offsetWidth - div.clientWidth;
+    div.remove;
+    return scrollWidth;
   }
 
   function showModalByTime(selector, time) {
     setTimeout(function () {
       document.querySelector(selector).style.display = "block";
-    }, 60000);
+    }, time);
   }
 
+  showModalByTime('.popup_engineer', 60000);
   bindModal(".popup_engineer_btn", ".popup_engineer", ".popup_engineer .popup_close");
   bindModal(".phone_link", ".popup", ".popup .popup_close");
   bindModal(".glazing_price_btn", ".popup_calc", ".popup_calc_close");

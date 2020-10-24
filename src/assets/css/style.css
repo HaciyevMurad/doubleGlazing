@@ -13,6 +13,17 @@ body {
   color: #000000;
 }
 
+.fided{
+  animation-name: fided;
+  animation-duration: 1.5s;
+  
+}
+
+@keyframes fided{
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
 .status {
   display: block;
   color: red;
@@ -1526,6 +1537,8 @@ textarea:focus {
     color: transparent;
   }
 
+ 
+
   .form_notice {
     font-size: 1rem;
   }
@@ -1803,6 +1816,8 @@ textarea:focus {
     padding: 1rem 5rem;
   }
 }
+
+
 
 /* small devices, tablets */
 @media only screen and (max-width: 768px) {
