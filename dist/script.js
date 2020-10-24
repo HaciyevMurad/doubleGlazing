@@ -17999,6 +17999,52 @@ var forms = function forms(state) {
 
 /***/ }),
 
+/***/ "./src/js/images.js":
+/*!**************************!*\
+  !*** ./src/js/images.js ***!
+  \**************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var images = function images() {
+  var SectionWorks = document.querySelector('.works'); //create element and add class
+
+  var imgPopup = document.createElement('div');
+  imgPopup.classList.add('popup');
+  var bigImg = document.createElement('img');
+  imgPopup.style.justifyContent = 'center';
+  imgPopup.style.alignItems = 'center';
+  bigImg.style.maxHeight = '80%'; //append
+
+  imgPopup.appendChild(bigImg);
+  SectionWorks.appendChild(imgPopup); // add event listener       
+
+  SectionWorks.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    if (e.target.className === 'preview') {
+      var path = e.target.parentNode.getAttribute('href');
+      imgPopup.style.display = "flex";
+      document.body.style.overflow = "hidden";
+      bigImg.setAttribute('src', path);
+    }
+  });
+  var popup = document.querySelector('.popup');
+  popup.addEventListener('click', function (e) {
+    if (e.target.className === 'popup') {
+      imgPopup.style.display = "none";
+      document.body.style.overflow = "";
+    }
+  });
+  console.log(popup);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (images);
+
+/***/ }),
+
 /***/ "./src/js/main.js":
 /*!************************!*\
   !*** ./src/js/main.js ***!
@@ -18014,6 +18060,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./forms */ "./src/js/forms.js");
 /* harmony import */ var _changeModalState__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./changeModalState */ "./src/js/changeModalState.js");
 /* harmony import */ var _timer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./timer */ "./src/js/timer.js");
+/* harmony import */ var _images__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./images */ "./src/js/images.js");
+
 
 
 
@@ -18023,14 +18071,15 @@ __webpack_require__.r(__webpack_exports__);
 window.addEventListener('DOMContentLoaded', function () {
   var modalState = {};
   var deadline = 'dec 31, 2020';
-  Object(_timer__WEBPACK_IMPORTED_MODULE_5__["default"])('.container1', deadline);
-  Object(_changeModalState__WEBPACK_IMPORTED_MODULE_4__["default"])(modalState);
   Object(_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.glazing_slider', '.glazing_block', '.glazing_content', 'active');
   Object(_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.decoration_slider', '.no_click', '.decoration_content > div > div', 'after_click');
   Object(_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.decoration_slider', '.no_click', '.decoration_content > div > div', 'after_click');
   Object(_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.balcon_icons', '.balcon_icons_img', '.big_img  > img', 'do_image_more', 'inline');
   Object(_modals__WEBPACK_IMPORTED_MODULE_1__["default"])();
-  Object(_forms__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  Object(_forms__WEBPACK_IMPORTED_MODULE_3__["default"])(modalState);
+  Object(_changeModalState__WEBPACK_IMPORTED_MODULE_4__["default"])(modalState);
+  Object(_timer__WEBPACK_IMPORTED_MODULE_5__["default"])('.container1', deadline);
+  Object(_images__WEBPACK_IMPORTED_MODULE_6__["default"])();
 });
 
 /***/ }),
